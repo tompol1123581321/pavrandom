@@ -20,7 +20,7 @@ const Main = () => {
 			>
 				<InputGroup
 					size="lg"
-					style={{ width: "20rem", margin: "auto" }}
+					style={{ maxWidth: "20rem", margin: "auto" }}
 				>
 					<InputGroup.Prepend>
 						<InputGroup.Text id="inputGroup-sizing-lg">
