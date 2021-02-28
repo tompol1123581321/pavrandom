@@ -1,6 +1,5 @@
 import React, { useState } from "react"
 import {
-	Card,
 	Container,
 	FormControl,
 	InputGroup,
@@ -14,22 +13,27 @@ const Main = () => {
 	)
 	return (
 		<div className="mainPage">
-			<Container>
-				<InputGroup size="lg">
+			<Container
+				style={{
+					maxHeight: "20rem",
+				}}
+			>
+				<InputGroup
+					size="lg"
+					style={{ width: "20rem", margin: "auto" }}
+				>
 					<InputGroup.Prepend>
 						<InputGroup.Text id="inputGroup-sizing-lg">
 							Počet studentů
 						</InputGroup.Text>
 					</InputGroup.Prepend>
 					<FormControl
-						style={{ maxWidth: "10rem" }}
+						style={{
+							maxWidth: "10rem",
+						}}
 						type="number"
 						onChange={(e) => {
-							if (e.target.value < 1) {
-								alert("number must atleast 1")
-							} else {
-								setNumberOfStudents(e.target.value)
-							}
+							setNumberOfStudents(e.target.value)
 						}}
 						value={numberOfStudents}
 						aria-label="Large"

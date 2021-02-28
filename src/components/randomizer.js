@@ -6,8 +6,7 @@ const Randomizer = ({ numberOfStudents }) => {
 	const max = numberOfStudents
 	const [random, setRandom] = useState(numberOfStudents)
 	return (
-		<div>
-			<h1>{numberOfStudents}</h1>
+		<div className="Randomizer">
 			<Button
 				onClick={() => {
 					if (numberOfStudents > 0) {
