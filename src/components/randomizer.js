@@ -1,32 +1,31 @@
 import { motion } from "framer-motion"
 import React, { useState } from "react"
+import "../style/style.scss"
 
 const Randomizer = ({ numberOfStudents }) => {
-	const [click, setClick] = useState("click")
+	const [random, setRandom] = useState()
 	const min = 1
-	const max = numberOfStudents
-	const [random, setRandom] = useState(numberOfStudents)
+
 	return (
-		<div className="Randomizer">
-			<motion.div
-				className="buttonR"
-				whileTap={{
-					scale: 0.8,
-					rotate: -90,
-					borderRadius: "10rem",
-				}}
-				onClick={() => {
-					if (numberOfStudents > 0) {
-						setRandom(
-							Math.round(min + Math.random() * (max - min))
+		<motion.div
+			className="buttonR"
+			whileTap={{
+				scale: 0.8,
+				rotate: -90,
+				borderRadius: "100%",
+			}}
+			onClick={() => {
+				if (numberOfStudents > 0) {
+					setRandom(
+						Math.round(
+							min + Math.random() * (numberOfStudents - min)
 						)
-						setClick(random)
-					}
-				}}
-			>
-				<h2>{click}</h2>
-			</motion.div>
-		</div>
+					)
+				}
+			}}
+		>
+			<h2>{random}</h2>
+		</motion.div>
 	)
 }
 

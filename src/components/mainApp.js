@@ -8,9 +8,8 @@ import "../style/style.scss"
 import Randomizer from "./randomizer"
 
 const Main = () => {
-	const [numberOfStudents, setNumberOfStudents] = useState(
-		1
-	)
+	const [numberOfStudents, setNumberOfStudents] = useState()
+
 	return (
 		<div className="mainPage">
 			<Container
@@ -40,7 +39,16 @@ const Main = () => {
 						aria-describedby="inputGroup-sizing-sm"
 					/>
 				</InputGroup>
+
 				<Randomizer numberOfStudents={numberOfStudents} />
+				<h5
+					style={{
+						textAlign: "center",
+						paddingTop: "1rem",
+					}}
+				>
+					Click the square to roll.
+				</h5>
 			</Container>
 		</div>
 	)
